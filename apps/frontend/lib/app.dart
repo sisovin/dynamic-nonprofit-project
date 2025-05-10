@@ -8,7 +8,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: AppConstants.appName,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: AppConstants.primaryColor,
+        accentColor: AppConstants.accentColor,
+        backgroundColor: AppConstants.backgroundColor,
+        textTheme: TextTheme(
+          headline1: AppConstants.heading1,
+          headline2: AppConstants.heading2,
+          bodyText1: AppConstants.bodyText,
+        ),
       ),
       initialRoute: '/',
       routes: appRoutes,
