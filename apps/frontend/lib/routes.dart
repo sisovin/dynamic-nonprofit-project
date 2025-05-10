@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
-import 'screens/home_screen.dart';
-import 'screens/nonprofit_list_screen.dart';
-import 'screens/nonprofit_detail_screen.dart';
-import 'screens/project_list_screen.dart';
-import 'screens/project_detail_screen.dart';
+import 'pages/home_page.dart';
+import 'pages/about_page.dart';
+import 'pages/causes_page.dart';
+import 'pages/donate_page.dart';
+import 'pages/contact_page.dart';
+import 'pages/team_page.dart';
+import 'pages/testimonial_page.dart';
 
 final Map<String, WidgetBuilder> appRoutes = {
-  '/': (context) => HomeScreen(),
-  '/nonprofits': (context) => NonprofitListScreen(),
-  '/nonprofits/:id': (context) => NonprofitDetailScreen(),
-  '/projects': (context) => ProjectListScreen(),
-  '/projects/:id': (context) => ProjectDetailScreen(),
+  '/': (context) => HomePage(),
+  '/about': (context) => AboutPage(),
+  '/causes': (context) => CausesPage(),
+  '/donate': (context) => DonatePage(),
+  '/contact': (context) => ContactPage(),
+  '/team': (context) => TeamPage(),
+  '/testimonials': (context) => TestimonialPage(),
 };

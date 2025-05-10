@@ -23,9 +23,33 @@ This project is a dynamic nonprofit project management application. It consists 
 │       ├── lib/
 │       │   ├── constants/
 │       │   │   └── app_constants.dart
+│       │   ├── models/
+│       │   │   ├── campaign.dart
+│       │   │   ├── donation.dart
+│       │   │   ├── team_member.dart
+│       │   │   ├── testimonial.dart
+│       │   │   ├── volunteer.dart
+│       │   ├── pages/
+│       │   │   ├── home_page.dart
+│       │   │   ├── about_page.dart
+│       │   │   ├── causes_page.dart
+│       │   │   ├── donate_page.dart
+│       │   │   ├── contact_page.dart
+│       │   │   ├── team_page.dart
+│       │   │   ├── testimonial_page.dart
+│       │   ├── services/
+│       │   │   ├── api_service.dart
+│       │   │   ├── auth_service.dart
+│       │   │   ├── donation_service.dart
+│       │   ├── widgets/
+│       │   │   ├── animated_progress_bar.dart
+│       │   │   ├── responsive_navbar.dart
+│       │   │   ├── carousel_slider.dart
+│       │   │   ├── donation_form.dart
+│       │   │   ├── parallax_background.dart
 │       │   ├── app.dart
 │       │   ├── main.dart
-│       │   └── routes.dart
+│       │   ├── routes.dart
 │       ├── web/
 │       │   ├── favicon.png
 │       │   ├── icons/
@@ -50,6 +74,11 @@ The data models are defined in `models.py`. The following models are included:
 
 - `Nonprofit`: Represents a nonprofit organization with fields for name, description, and website.
 - `Project`: Represents a project associated with a nonprofit, with fields for title, description, start date, and end date.
+- `Campaign`: Represents a fundraising campaign with fields for title, description, image, target amount, raised amount, start date, end date, and is_featured.
+- `TeamMember`: Represents a team member with fields for name, position, bio, image, and social links.
+- `Testimonial`: Represents a testimonial with fields for author, role, content, image, and rating.
+- `Donation`: Represents a donation with fields for amount, donor, campaign, date, and anonymous.
+- `Volunteer`: Represents a volunteer with fields for name, email, phone, skills, and availability.
 
 ### Serializers
 
@@ -57,6 +86,11 @@ Serializers are used to convert model instances to JSON. They are defined in `se
 
 - `NonprofitSerializer`: Serializes the `Nonprofit` model.
 - `ProjectSerializer`: Serializes the `Project` model.
+- `CampaignSerializer`: Serializes the `Campaign` model.
+- `TeamMemberSerializer`: Serializes the `TeamMember` model.
+- `TestimonialSerializer`: Serializes the `Testimonial` model.
+- `DonationSerializer`: Serializes the `Donation` model.
+- `VolunteerSerializer`: Serializes the `Volunteer` model.
 
 ### Views
 
@@ -81,6 +115,46 @@ The frontend application is built using Flutter and is located in the `apps/fron
 ### Constants
 
 App-wide constants are defined in `lib/constants/app_constants.dart`.
+
+### Models
+
+Data models are defined in the `lib/models` directory:
+
+- `Campaign`: Represents a fundraising campaign.
+- `Donation`: Represents a donation.
+- `TeamMember`: Represents a team member.
+- `Testimonial`: Represents a testimonial.
+- `Volunteer`: Represents a volunteer.
+
+### Pages
+
+The main pages of the application are defined in the `lib/pages` directory:
+
+- `home_page.dart`: The home page of the application.
+- `about_page.dart`: The about page with mission, vision, and team member grid.
+- `causes_page.dart`: The causes page with campaign cards grid, filtering, and pagination.
+- `donate_page.dart`: The donate page with donation form, payment gateway integration, and progress bar animation.
+- `contact_page.dart`: The contact page with contact form, Google Maps integration, and form validation.
+- `team_page.dart`: The team page with team member bios, social links, and modal for detailed view.
+- `testimonial_page.dart`: The testimonial page with testimonial carousel, rating stars, and swipe gestures.
+
+### Services
+
+Services for API calls and authentication are defined in the `lib/services` directory:
+
+- `api_service.dart`: Base API client with all API calls and error handling.
+- `auth_service.dart`: Handles login/logout, JWT storage, and user state management.
+- `donation_service.dart`: Handles donation processing, receipt generation, and payment validation.
+
+### Widgets
+
+Reusable widgets are defined in the `lib/widgets` directory:
+
+- `animated_progress_bar.dart`: Animated progress indicator with percentage display and smooth transitions.
+- `responsive_navbar.dart`: Desktop navigation, mobile drawer, and active route highlighting.
+- `carousel_slider.dart`: Auto-sliding carousel with indicator dots and smooth transitions.
+- `donation_form.dart`: Donation form fields, validation, and payment options.
+- `parallax_background.dart`: Parallax effect with scroll listener and optimized performance.
 
 ### Main App Structure
 
